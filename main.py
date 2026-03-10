@@ -1,7 +1,9 @@
 import pickle
 from flask import Flask, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 with open('sentiment_model_v1.pkl', 'rb') as fp:
   model = pickle.load(fp)
